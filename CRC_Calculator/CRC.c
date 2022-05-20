@@ -141,6 +141,15 @@ void ReceiverDecodeMsg (void)
 int main (void)
 {
 		
+		unsigned char x = 5;
+		
+		unsigned char temp = x;
+		
+		while (temp != 1)
+		{
+			x *= --temp;
+		}
+		
 		SenderConstructMsg();
 		ReceiverDecodeMsg();
 		
@@ -153,8 +162,11 @@ int main (void)
 			else
 			{
 				printf("\n%d - Negative ACK\n\n", i);
+
 			}
 		}
+		
+		printf("%d", x);
 		
 		getch();
 		
